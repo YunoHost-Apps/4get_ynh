@@ -86,6 +86,7 @@ ynh_replace --match="^.*onion\">Tor.*$" --replace="" --file="$install_dir/templa
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
+ynh_safe_rm "$install_dir/data/config.php" #remove upstream default file
 ynh_config_add --template="config.php" --destination="$install_dir/data/config.php"
 
 # Create proxies file 
