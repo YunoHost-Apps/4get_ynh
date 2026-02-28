@@ -20,8 +20,8 @@ ynh_abort_if_errors
 # RETRIEVE ARGUMENTS
 #=================================================
 
-data_dir=$(ynh_app_setting_get --key=data_dir)
-config_file="$data_dir/data/config.php"
+install_dir=$(ynh_app_setting_get --key=install_dir)
+config_file="$install_dir/data/config.php"
 
 #=================================================
 # SPECIFIC GETTERS FOR TOML SHORT KEY
@@ -41,6 +41,19 @@ get__instances() {
     local urls="$(sed -n '/const INSTANCES = \[/,/\];/p' "$config_file" | sed '1d;$d' | sed 's/^[ \t"]*//' | sed 's/[ \t",]*$/,/')" #1. Extract, 2. Remove first and last lines, 3. Remove spaces, quotes and commas.
     echo -e "${urls//,/\\n}" #double newline required for proper display in config panel's text input box
 }
+
+#=================================================
+# SPECIFIC VALIDATORS FOR TOML SHORT KEYS
+#=================================================
+
+validate__instances() {
+	local msg="One URL per line, without quotation marks or comma."
+    if [[ $instances == *"\""* ]]; then #unescaped double quotes would crash the app
+      ynh_print_warn $msg  #display warning message in the log
+      echo $msg #prevent from saving and return to config panel
+    fi
+}
+
 #=================================================
 # SPECIFIC SETTERS FOR TOML SHORT KEYS
 #=================================================
@@ -65,7 +78,7 @@ set__instances() {
     array_block+="\t];"
 
     sed -i "/^\s*const INSTANCES = \[.*$/,/^\s*\];$/c\\$array_block" "$config_file"
-    #ynh_store_file_checksum "$config_file"
+    ynh_store_file_checksum "$config_file"
 }
 
 #=================================================

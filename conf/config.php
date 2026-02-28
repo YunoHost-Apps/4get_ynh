@@ -88,7 +88,34 @@ class config{
 	// it. Is used to generate a distributed list of instances.
 	// To appear in the list of an instance, contact the host and if everyone added
 	// eachother your serber should appear everywhere.
-	const INSTANCES = __INSTANCES__;
+	const INSTANCES = [
+	    "https://__DOMAIN____PATH__",
+		"https://4get.ca",
+		"https://4get.zzls.xyz",
+		"https://4getus.zzls.xyz",
+		"https://4get.silly.computer",
+		"https://4get.konakona.moe",
+		"https://4get.lvkaszus.pl",
+		"https://4g.ggtyler.dev",
+		"https://4get.perennialte.ch",
+		"https://4get.sijh.net",
+		"https://4get.hbubli.cc",
+		"https://4get.plunked.party",
+		"https://4get.etenie.pl",
+		"https://4get.lunar.icu",
+		"https://4get.dcs0.hu",
+		"https://4get.kizuki.lol",
+		"https://4get.psily.garden",
+		"https://search.milivojevic.in.rs",
+		"https://4get.snine.nl",
+		"https://4get.datura.network",
+		"https://4get.neco.lol",
+		"https://4get.lol",
+		"https://4get.ch",
+		"https://4get.edmateo.site",
+		"https://4get.sudovanilla.org",
+		"https://search.mint.lgbt"
+	];
 	
 	// Default user agent to use for scraper requests. Sometimes ignored to get specific webpages
 	// Changing this might break things.
