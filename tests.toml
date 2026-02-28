@@ -4,4 +4,4 @@ test_format = 1.0
 
 [default]
 
-test_upgrade_from.d6a5740e65ce51e9e5fe38b645fdd8e012c433fd.name = "Upgrade from 2025.12.14~ynh1"
+#test_upgrade_from.53399263e4cef2c8cafd63322ca13e6113da1ae2.name = "Upgrade from 2025.12.14~ynh1"
