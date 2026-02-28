@@ -19,6 +19,7 @@ server_long_description=${server_long_description:-"null"}
 default_theme=${default_theme:-"\"Dark\""}
 api_enabled=${api_enabled:-true}
 marginalia_api_key=${marginalia_api_key:-"null"}
+proxlist="";
 
 proxy_ddg=${proxy_ddg:-false}
 proxy_yahoo=${proxy_yahoo:-false}

@@ -589,7 +589,7 @@ name.fr = "Configuration des proxys"
     help.en = "Proxies that are used by selected scrapers (cf. scrapers' configuration panel)."
     help.fr = "Proxies qui sont utilisés par les scrapers sélectionnés (cf. le panneau de configuration des scrapers)."
 
-        [proxies.list.list]
+        [proxies.list.proxlist]
         ask.en = "Proxies list"
         ask.fr = "Liste de proxies"
         help.en = "Specify one proxy per line following this format: \"`protocol`:`address`:`port`:`username`:`password`\".\nAvailable protocols: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
