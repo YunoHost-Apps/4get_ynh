@@ -17,7 +17,7 @@ server_long_description="null";
 default_theme="\"Dark\"";
 api_enabled=true;
 marginalia_api_key="null";
-proxlist="\"\"";
+proxlist="null";
 
 proxy_ddg=false;
 proxy_yahoo=false;
