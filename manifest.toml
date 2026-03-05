@@ -17,17 +17,17 @@ website = "https://4get.ca"
 demo = "https://4get.ca"
 admindoc = "https://git.lolcat.ca/lolcat/4get/src/branch/master/docs/configure.md"
 userdoc = "https://4get.ca/about"
-code = "https://git.lolcat.ca/lolcat/4get"  
+code = "https://git.lolcat.ca/lolcat/4get"
 fund = "https://4get.ca/donate"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
-ldap = "not_relevant"
-sso = "not_relevant"
+ldap = false
+sso = false
 
 disk = "10M"
 ram.build = "0M"

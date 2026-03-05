@@ -66,6 +66,7 @@ set__server_long_desc() {
         content="\"$content\""
     fi
     ynh_replace --match="^\(\s*const SERVER_LONG_DESCRIPTION = \).*;$" --replace="\1$content;"  --file="$config_file"
+    ynh_store_file_checksum "$config_file"
 }
 
 set__instances() {

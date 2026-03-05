@@ -19,6 +19,7 @@ server_long_description=${server_long_description:-"null"}
 default_theme=${default_theme:-"\"Dark\""}
 api_enabled=${api_enabled:-true}
 marginalia_api_key=${marginalia_api_key:-"null"}
+proxlist=${proxlist:-"null"};
 
 proxy_ddg=${proxy_ddg:-false}
 proxy_yahoo=${proxy_yahoo:-false}
@@ -71,7 +72,7 @@ proxy_yandex_v=${proxy_yandex_v:-false}
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="$install_dir/data/proxies/custom_proxies.txt"
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="data/proxies/custom_proxies.txt"
 
 chown -R "$app:www-data" "$install_dir"
 
@@ -86,6 +87,7 @@ ynh_replace --match="^.*onion\">Tor.*$" --replace="" --file="$install_dir/templa
 #=================================================
 ynh_script_progression "Updating $app's configuration files..."
 
+ynh_safe_rm "$install_dir/data/config.php" #remove upstream default file
 ynh_config_add --template="config.php" --destination="$install_dir/data/config.php"
 
 # Set restrictive permissions for private resources
